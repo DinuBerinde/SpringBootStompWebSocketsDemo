@@ -29,8 +29,8 @@ public class EchoController {
     }
 
     @MessageMapping("/message")
-    public void object(Principal principal, EchoModel echoModel) {
-        simpMessagingTemplate.convertAndSendToUser(principal.getName(), "/echo/object", new EchoModel(echoModel.message));
+    public void message(Principal principal, EchoModel echoModel) {
+        simpMessagingTemplate.convertAndSendToUser(principal.getName(), "/echo/message", new EchoModel(echoModel.message));
     }
 
 }
