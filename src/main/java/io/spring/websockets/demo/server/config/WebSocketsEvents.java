@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.messaging.SessionConnectEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
+/**
+ * Component class which logs what client connected or disconnected from a webSocket session.
+ */
 @Component
 public class WebSocketsEvents {
     private final static Logger LOGGER = LoggerFactory.getLogger(WebSocketsEvents.class);

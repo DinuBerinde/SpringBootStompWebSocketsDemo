@@ -8,6 +8,15 @@ import org.springframework.stereotype.Controller;
 
 import java.security.Principal;
 
+/**
+ * Example of a controller which handles a string message and an object helloWorld message.
+ *
+ * Clients should subscribe to /user/clientKey/echo/message and /user/clientKey/echo/object in order
+ * to receive the messages and they should send messages to /echo/message and /echo/object
+ *
+ * We use a clientKey because the message response is send to a specific client and
+ * is not broadcast to all subscribed clients.
+ */
 @Controller
 @MessageMapping("/echo")
 public class EchoController {

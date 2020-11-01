@@ -4,6 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean;
 
+/**
+ * Configuration of webSocket text and binary message size of the Tomcat container.
+ */
 @Configuration
 public class TomcatConfiguration {
 

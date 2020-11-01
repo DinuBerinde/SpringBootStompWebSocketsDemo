@@ -11,7 +11,7 @@ import org.springframework.util.MimeType;
 import java.nio.charset.StandardCharsets;
 
 /**
- * A websocket message converter implementation class using the GSON library.
+ * A webSocket message converter implementation using the GSON library.
  */
 public class GsonMessageConverter extends AbstractMessageConverter {
     private final Gson gson;
