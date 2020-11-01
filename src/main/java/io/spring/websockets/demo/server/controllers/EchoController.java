@@ -11,8 +11,8 @@ import java.security.Principal;
 /**
  * Example of a controller which handles a string message and an object helloWorld message.
  *
- * Clients should subscribe to /user/clientKey/echo/message and /user/clientKey/echo/object in order
- * to receive the messages and they should send messages to /echo/message and /echo/object
+ * Clients should subscribe to /user/clientKey/echo/message in order
+ * to receive messages and they should send messages to the destination /echo/message
  *
  * We use a clientKey because the message response is send to a specific client and
  * is not broadcast to all subscribed clients.
@@ -28,13 +28,7 @@ public class EchoController {
         this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
-
     @MessageMapping("/message")
-    public void message(Principal principal, String message) {
-        simpMessagingTemplate.convertAndSendToUser(principal.getName(), "/echo/message", "Returning from server " + message);
-    }
-
-    @MessageMapping("/object")
     public void object(Principal principal, HelloWorld helloWorld) {
         simpMessagingTemplate.convertAndSendToUser(principal.getName(), "/echo/object", new HelloWorld("Returning from server " + helloWorld.message));
     }
