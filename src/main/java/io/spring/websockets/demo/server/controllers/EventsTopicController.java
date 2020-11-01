@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
  * Example of a controller which handles an event message.
  *
  * Clients should subscribe to topic /topic/events and receive event messages after some client
- * added new events to the topic by sending an event object to the destination /events/add
+ * added a new event to the topic by sending an event object to the destination /events/add
  *
  * This is similar to a Chat, were all clients can send and receive messages.
  */

@@ -1,6 +1,6 @@
 package io.spring.websockets.demo.server.controllers;
 
-import io.spring.websockets.demo.models.HelloWorld;
+import io.spring.websockets.demo.models.EchoModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import java.security.Principal;
 
 /**
- * Example of a controller which handles a string message and an object helloWorld message.
+ * Example of a controller which handles an echo message.
  *
  * Clients should subscribe to /user/clientKey/echo/message in order
  * to receive messages and they should send messages to the destination /echo/message
@@ -29,8 +29,8 @@ public class EchoController {
     }
 
     @MessageMapping("/message")
-    public void object(Principal principal, HelloWorld helloWorld) {
-        simpMessagingTemplate.convertAndSendToUser(principal.getName(), "/echo/object", new HelloWorld("Returning from server " + helloWorld.message));
+    public void object(Principal principal, EchoModel echoModel) {
+        simpMessagingTemplate.convertAndSendToUser(principal.getName(), "/echo/object", new EchoModel(echoModel.message));
     }
 
 }

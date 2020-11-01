@@ -1,9 +1,9 @@
 package io.spring.websockets.demo.models;
 
-public class HelloWorld {
+public class EchoModel {
     public final String message;
 
-    public HelloWorld(String message) {
+    public EchoModel(String message) {
         this.message = message;
     }
 }
