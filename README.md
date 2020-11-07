@@ -1,5 +1,6 @@
 # SpringStompWebSockets
-Demo project for Spring Boot using webSockets over STOMP.
+Demo project for Spring Boot using webSockets over STOMP  https://stomp.github.io/index.html.
 
-It uses the STOMP protocol https://stomp.github.io/index.html with a GSON implementation of the 
-webSocket message converter and Tomcat as container.
+It uses Tomcat as container and exchanges only json messages with
+the GSON library to serialize and deserialize the json. 
+
